@@ -1,20 +1,19 @@
-import {Text} from "native-base";
 import React from "react";
 
-export const AppTitle = "Przyjazne Słowa - Menadżer";
+export const AppTitle = "Przyjazne Słowa - Ustawienia";
 export const ActiveConfiguration = "Aktywna konfiguracja: ";
 export const Learning = "uczenie";
 export const Test = "test";
 export const Lack = "Brak";
 export const Configurations = "Konfiguracje";
-export const Resources = "Zasoby";
+export const Resources = "Materiały";
 export const Create = "Utwórz";
 export const ListOfConfigurationsIsEmpty = "Lista konfiguracji jest pusta";
 export const CreateConfiguration = "Utwórz konfiguracje";
 export const ActiveLearning = "aktywne uczenie";
 export const ActiveTest = "aktywny test";
 export const InWhatModeDoYouWantToActivateTheStep = "W jakim trybie chcesz aktywować krok?";
-export const AreYouSureYouWantToDelete = "Czy napewno chcesz usunąć"
+export const AreYouSureYouWantToDelete = "Czy napewno chcesz usunąć "
 export const Yes = "Tak";
 export const No = "Nie";
 export const StepNamed = "Krok o nazwie ";
@@ -45,17 +44,18 @@ export const GrayedOut = "Wyszarz" ;
 export const Enlarge = "Powiększ";
 export const TypeOfCommand = "Rodzaj polecenia";
 export const ShowWhereIs = "Pokaż gdzie jest ";
-export const NumberOfPictures = "Ilość obrazków" ;
-export const ShowLabelUnderPictures = "Pokazuj podpisy pod obrazkami";
+export const WhereIs = "Gdzie jest ";
+export const NumberOfPictures = "Liczba obrazków" ;
+export const ShowLabelUnderPictures = "Podpisy pod obrazkami";
 export const ReadingCommands = "Czytanie poleceń";
 export const TimeToShowTheHints = "Czas do pokazania podpowiedzi";
-export const NumberOfRepetitions = "Ilość powtórzeń";
+export const NumberOfRepetitions = "Liczba powtórzeń";
 export const ChooseVerbalPraise = "Wybierz pochwały słowne";
 export const Good = "Dobrze";
-export const Great = "ŚWIETNIE";
+export const Great = "Świetnie";
 export const Cool = "Super";
-export const VoiceReadingOfRewards = "Odczytywanie głosowe wzmocnień";
-export const ChooseAnimatedRewards = "Wybierz animowane motywy nagród";
+export const VoiceReadingOfRewards = "Odczytywanie głosowe pochwał";
+export const ChooseAnimatedRewards = "Wybierz animacje";
 export const TestConfiguration = "Konfiguracja testu";
 export const TimeForAnswer= "Czas na odpowiedź";
 export const Rewards= "Wzmocnienia";
@@ -66,14 +66,12 @@ export const SampleSettings = "Ustawienia próby";
 export const HintsSettings = "Ustawienia podpowiedzi";
 export const Delete = "Usuń";
 export const RemoveWordFromConfiguration = "Usunąć słowo z konfiguracji?";
-export const SelectMaterialInNextTable = "Wybierz materiał w tabeli obok";
+export const SelectMaterialInNextTable = "Wybierz materiał na liście obok";
 export const ListIsEmpty = "Lista jest pusta";
 export const AddMaterial = "Dodaj materiał";
 export const SelectWordToAddToConfiguration = "Wybierz słowo, które chcesz dodać do konfiguracji";
 export const TestSource = "W trybie testu dziecko pracuje na materiałach zaznaczonych w zakładce Materiał.";
-export const TestExplanation= "W Trybie Testu aplikacja nie korzysta z ustawień z zakładki Uczenie oraz Wzmocnienia, a " +
-                              "terapeuta powinien powstrzymać się od interwencji w interakcje dziecka aż do zakończenia " +
-                              "testu.";
+export const TestExplanation= "W Trybie Testu aplikacja nie korzysta z ustawień z zakładki Uczenie oraz Pochwały, a terapeuta powinien powstrzymać się od interwencji w interakcje dziecka aż do zakończenia testu.";
 export const EnterTheStepName = "Podaj nazwę kroku";
 export const Together = "Łącznie:";
 export const Repetition = "powtórzenie";
