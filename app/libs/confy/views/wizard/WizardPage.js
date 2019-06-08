@@ -24,7 +24,7 @@ type WizardPageProps<T> = {
 
 const BaseWizardPage = ({name, onBack, children, onSave, config}) => (
     <Page>
-        <PageHeader onBack={() => onBack()} header={name}>
+        <PageHeader onBack={() => onBack()} header={constants.NameCapitalLetter + name}>
             <HeaderButton text={constants.Save} action={() => Modal.textAsk(constants.EnterTheStepName, name).then(onConfirm(newName => onSave(config, newName)))} />
         </PageHeader>
         {children}
