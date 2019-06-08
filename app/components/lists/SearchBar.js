@@ -13,7 +13,7 @@ export default SearchBar = ({onSearchChange = emptyFunc, searchQuery}) => {
     }
 
     return (
-        <Form>
+        <Form style={{marginLeft: 50}}>
             <Item>
                 <Icon name="search"/>
                 <Input placeholder={Search}
