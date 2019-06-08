@@ -15,6 +15,7 @@ import {get, getChildProp, getSiblingProp} from "../libs/confy/fields/dynamic/tr
 import TestObjectInput from "../pages/confyViews/testObjectPage/TestObjectInput"
 import * as constants from "../../android/app/src/main/res/constantStrings";
 import {fontStyles as fontStyle} from "../../android/app/src/main/res/fontStyle";
+import {IntegerFieldWithInformation} from "../libs/confy/fields/integer/IntegerFieldWithInformation";
 
 export const WordModel = DBModel("words", {
     name: TextField(constants.Word),
@@ -57,7 +58,7 @@ export const ConfigurationModel = MainModel({
     showPicturesLabels: BoolField(constants.ShowLabelUnderPictures, {def: true}),
     isReadingCommands: BoolField(constants.ReadingCommands, {def: true}),
     showHintAfter: IntegerField(constants.TimeToShowTheHints, {min: 1, max: 20, def: 5, units: "s"}),
-    numberOfRepetitions: IntegerField(constants.NumberOfRepetitions, {min: 1, max: 20, def: 3}),
+    numberOfRepetitions: IntegerFieldWithInformation(constants.NumberOfRepetitions, {min: 1, max: 20, def: 3, info: "jakiestamsobieinfo"}),
     textRewards: MultiChooserField(constants.ChooseVerbalPraise, {
         options: [
             constants.Cool,
