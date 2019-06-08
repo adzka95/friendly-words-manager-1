@@ -10,7 +10,8 @@ const styles = {
         transform: [
             {scaleX: 1.2},
             {scaleY: 1.2},
-        ]
+        ],
+        marginLeft: 20
     }
 }
 
