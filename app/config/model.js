@@ -45,7 +45,8 @@ export const ConfigurationModel = MainModel({
         ],
         def: [
             constants.GrayedOut
-        ]
+        ],
+        info: ""
     }),
     commandText: OptionField(constants.TypeOfCommand, {
         options: [
@@ -68,7 +69,8 @@ export const ConfigurationModel = MainModel({
         def: [
             constants.Great,
             constants.Good
-        ]
+        ],
+        info : constants.ChooseVerbalPraiseInformation
     }),
     isReadingRewards: BoolField(constants.VoiceReadingOfRewards),
     animationRewards: ImageMultiChooserField(constants.ChooseAnimatedRewards, {

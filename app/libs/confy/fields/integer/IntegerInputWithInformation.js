@@ -11,7 +11,7 @@ import * as constants from "../../../../../android/app/src/main/res/constantStri
 
 const IntegerSlider = ({verbose, value, onChange, min, max, units, info, isFocused, isFocusedChange}) => {
 
-    const clear = () => {
+    const showInfo = () => {
         Modal.info(info)
     };
 
@@ -19,7 +19,7 @@ const IntegerSlider = ({verbose, value, onChange, min, max, units, info, isFocus
         <View style={Containers.inline}>
             <FieldLabel text={verbose}/>
             <Button transparent
-                    onPress={clear}>
+                    onPress={showInfo}>
                 <Icon name="information-circle" style={{color: "#3F51B5"}}/>
             </Button>
         </View>
