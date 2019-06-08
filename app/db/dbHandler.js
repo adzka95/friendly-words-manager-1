@@ -24,7 +24,6 @@ const readDbFile = (fileName, defaultDb = {}) => () => readFile(fileName)
             ['grayedOut', constants.GrayedOut],
             ['good', constants.Good],
             ['great', constants.Great],
-            ['great3', constants.ShowWhereIs + "{" + constants.Word + "}"],
             ['commandText', `${constants.ShowWhereIs}{${constants.Word}}`],
         ])
         return readFile(fileName)

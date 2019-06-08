@@ -19,7 +19,7 @@ export const ConfigurationWizardView = WizardView(fields => [
     WizardStep(constants.Material, SingleView(fields.materials)),
     WizardStep(constants.LearningMethod, SectionView([
         Section(constants.StepSettings, [fields.commandText, fields.picturesNumber, fields.showPicturesLabels, fields.isReadingCommands]),
-        Section(constants.SampleSettings, [fields.numberOfRepetitions]),
+        Section(constants.NumberOfRepetitions, [fields.numberOfRepetitions]),
         Section(constants.HintsSettings, [fields.showHintAfter])
 
     ])),

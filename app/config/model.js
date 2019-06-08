@@ -48,6 +48,7 @@ export const ConfigurationModel = MainModel({
     }),
     commandText: OptionField(constants.TypeOfCommand, {
         options: [
+            constants.WhereIs + "{" + constants.Word + "}",
             constants.ShowWhereIs + "{" + constants.Word + "}",
             "{" + constants.Word + "}",
         ]
