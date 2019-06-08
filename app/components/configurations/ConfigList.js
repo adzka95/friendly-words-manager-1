@@ -7,17 +7,18 @@ import * as constants from "../../../android/app/src/main/res/constantStrings";
 import {fontStyles} from "../../../android/app/src/main/res/fontStyle";
 
 
-const activeTextStyle = ({
-    color: "#11a42f",
+const activeStyle = ({
+    //backgroundColor: '#b3c7f9'
+     backgroundColor: '#E5E6F2'
 })
 
 export const ConfigElem = ({item, active, children, onOpen}) => (
-    <ListItem>
+    <ListItem style={[{flex: 1}, active ? activeStyle : {}]}>
         <Body>
         <TouchableOpacity onPress={() => onOpen(item.id)}>
             <View style={{flex: 1}}>
-                <Text style={[active ? activeTextStyle : {}, fontStyles.listElement] }>{item.name}</Text>
-                {active && <Text style={[{...activeTextStyle, fontStyle: 'italic'},fontStyles.listElement]}> ({active})</Text>}
+                <Text style={fontStyles.listElement}>{item.name}</Text>
+                {active && <Text style={fontStyles.listElementFootnote}> ({active})</Text>}
             </View>
         </TouchableOpacity>
         </Body>

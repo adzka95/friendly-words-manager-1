@@ -27,6 +27,9 @@ export const fontStyles = StyleSheet.create({
     listElement: {
         fontSize: 30,
     },
+    listElementFootnote: {
+        fontSize: 20,
+    },
     emptyState: {
         fontSize: 30,
     },
