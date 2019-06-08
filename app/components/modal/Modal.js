@@ -2,6 +2,7 @@ import * as R from "ramda"
 
 export const Modal = {
     ask: (question, positive) => Promise.reject(),
+    info: (question, positive) => Promise.reject(),
     show: (children) => undefined,
     hide: () => undefined,
     toggle: () => undefined,

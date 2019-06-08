@@ -58,7 +58,7 @@ export const ConfigurationModel = MainModel({
     showPicturesLabels: BoolField(constants.ShowLabelUnderPictures, {def: true}),
     isReadingCommands: BoolField(constants.ReadingCommands, {def: true}),
     showHintAfter: IntegerField(constants.TimeToShowTheHints, {min: 1, max: 20, def: 5, units: "s"}),
-    numberOfRepetitions: IntegerFieldWithInformation(constants.NumberOfRepetitions, {min: 1, max: 20, def: 3, info: "jakiestamsobieinfo"}),
+    numberOfRepetitions: IntegerFieldWithInformation(constants.NumberOfRepetitions, {min: 1, max: 20, def: 3, info: constants.NumberOfRepetitionInformation}),
     textRewards: MultiChooserField(constants.ChooseVerbalPraise, {
         options: [
             constants.Cool,
@@ -79,7 +79,7 @@ export const ConfigurationModel = MainModel({
         ]
     }),
     testConfig: ObjectField(constants.TestConfiguration, {
-        numberOfRepetitions: IntegerField(constants.NumberOfRepetitions, {min: 1, max: 20, def: 3}),
+        numberOfRepetitions: IntegerFieldWithInformation(constants.NumberOfRepetitions, {min: 1, max: 20, def: 3, info: constants.NumberOfRepetitionInformation}),
         timeForAnswer: IntegerField(constants.TimeForAnswer, {min: 1, max: 10, def: 5, units: "s"})
     }, undefined, TestObjectInput)
 })

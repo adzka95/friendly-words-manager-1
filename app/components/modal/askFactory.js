@@ -19,6 +19,12 @@ const askerStyles = {
     }
 }
 
+export const OkButton =  (OkText) => ({onCancel}) =>
+    <View style={askerStyles.buttonsWrapper}>
+        <Button style={{...askerStyles.buttons, ...askerStyles.buttonYes}}
+                onPress={onCancel}><Text style={fontStyles.button}>{OkText}</Text></Button>
+    </View>
+
 export const Buttons = (positiveText, negativeText) => ({onCancel, onConfirm, positive}) =>
     <View style={askerStyles.buttonsWrapper}>
         <Button transparent={positive} style={{...askerStyles.buttons, ...askerStyles.buttonNo}}
@@ -29,6 +35,7 @@ export const Buttons = (positiveText, negativeText) => ({onCancel, onConfirm, po
 
 export const YesNoButtons = Buttons(constants.Yes, constants.No)
 export const SaveButtons = Buttons(constants.Save, constants.Cancel)
+export const InformationButton = OkButton(constants.Ok)
 
 export const askFactory = actions => AskerComponent => (question, positive = true) => new Promise((resolve, reject) =>
     actions.show(

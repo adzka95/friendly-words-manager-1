@@ -6,24 +6,13 @@ import FieldLabel from "../../components/ui/FieldLabel"
 import R from "ramda"
 import {withLink} from "../../libs/withState"
 import {Containers} from "../../styles/containers"
+import {Modal, onConfirm} from "../../../../components/modal/Modal";
+import * as constants from "../../../../../android/app/src/main/res/constantStrings";
 
 const IntegerSlider = ({verbose, value, onChange, min, max, units, info, isFocused, isFocusedChange}) => {
 
     const clear = () => {
-        Alert.alert(
-            info,
-            'My Alert Msg',
-            [
-                {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
-                {
-                    text: 'Cancel',
-                    onPress: () => console.log('Cancel Pressed'),
-                    style: 'cancel',
-                },
-                {text: 'OK', onPress: () => console.log('OK Pressed')},
-            ],
-            {cancelable: false},
-        );
+        Modal.info(info)
     };
 
     return <View style={Containers.formField}>
@@ -31,7 +20,7 @@ const IntegerSlider = ({verbose, value, onChange, min, max, units, info, isFocus
             <FieldLabel text={verbose}/>
             <Button transparent
                     onPress={clear}>
-                <Icon name="information-circle" style={{color: "#4286f4"}}/>
+                <Icon name="information-circle" style={{color: "#3F51B5"}}/>
             </Button>
         </View>
         <Text>{value}{units ? ` ${units}` : ""}</Text>
