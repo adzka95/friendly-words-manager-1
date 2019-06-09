@@ -71,7 +71,7 @@ export const Radio = ({children, selected, onChange}) => (
 
 const SourceChooser = enhanceSourceChooser(function SourceChooser({onConfirm, onCancel, chosenOption, chooseOption}) {
     return (
-        <View>
+        <View style = {{width: 400}}>
             <Text>{constants.AddImage}</Text>
             <List>
                 <ListItem>
