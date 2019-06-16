@@ -88,7 +88,7 @@ const dispatchToProps = (dispatch, ownProps) => ({
                 config.config
             ]
         ),
-        delete: (config) => Modal.ask(constants.AreYouSureYouWantToDelete + config.name + "?" , false)
+        delete: (config) => Modal.ask(constants.AreYouSureYouWantToDelete + constants.DeleteConfiguration + config.name + "?" , false)
             .then(onConfirm(() => dispatch(deleteConfig.start(config))))
     }
 })

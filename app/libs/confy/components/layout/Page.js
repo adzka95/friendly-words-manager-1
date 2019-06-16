@@ -17,7 +17,7 @@ export const PageHeader = ({children, onBack, header}) => (
                 <Icon name='arrow-back'/>
             </Button>
         </Left>
-        <Body><Title style={fontStyle.headerPage}>{header}</Title></Body>
+        <Body><Title style={[fontStyle.headerPage, {width:600}]}>{header}</Title></Body>
         <Right>
             {children}
         </Right>

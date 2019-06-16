@@ -58,7 +58,7 @@ const mapStateToProps = resourceName => ({resources}) => ({
 
 const mapDispatchToProps = (resourceName, toString) => dispatch => ({
     actions: {
-        delete: (resource) => Modal.ask(constants.AreYouSureYouWantToDelete + toString(resource) + "?", false)
+        delete: (resource) => Modal.ask(constants.AreYouSureYouWantToDelete + constants.DeleteMaterial + toString(resource) + "?", false)
             .then(onConfirm(() => dispatch(deleteResource.start(resourceName, resource.id))))
     }
 })

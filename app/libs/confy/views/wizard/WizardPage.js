@@ -22,14 +22,15 @@ type WizardPageProps<T> = {
     steps: Array<Step>,
 } & WizardPagePropsFromUser
 
-const BaseWizardPage = ({name, onBack, children, onSave, config}) => (
-    <Page>
-        <PageHeader onBack={() => onBack()} header={constants.NameCapitalLetter + name}>
-            <HeaderButton text={constants.Save} action={() => Modal.textAsk(constants.EnterTheStepName, name).then(onConfirm(newName => onSave(config, newName)))} />
+const BaseWizardPage = ({name, onBack, children, onSave, config, header, askText}) => {
+    return <Page>
+        <PageHeader onBack={() => onBack()} header={header + name}>
+            <HeaderButton text={constants.Save}
+                          action={() => Modal.textAsk(askText, name).then(onConfirm(newName => onSave(config, newName)))}/>
         </PageHeader>
         {children}
     </Page>
-)
+}
 
 const renderView = (View, config, onFieldChange) => (
     <View.component
@@ -38,7 +39,8 @@ const renderView = (View, config, onFieldChange) => (
 )
 
 export const WizardPage = ({steps, name, config, onFieldChange, onSave, ...props}: WizardPageProps<*>) => (
-    <BaseWizardPage onBack={props.onBack} name={name} onSave={onSave} config={config}>
+    <BaseWizardPage onBack={props.onBack} name={name} onSave={onSave} config={config}
+                    header={constants.ConfigurationNameCapitalLetter} askText={constants.EnterConfigurationpName}>
         <WizardStepsContainer>
             {
                 steps.map(step => (
@@ -51,8 +53,9 @@ export const WizardPage = ({steps, name, config, onFieldChange, onSave, ...props
     </BaseWizardPage>
 )
 
-export const WizardSinglePage = ({view, name, config, onFieldChange, onSave, ...props}: WizardPageProps<*>) => (
-    <BaseWizardPage onBack={props.onBack} name={name} onSave={onSave} config={config}>
+export const WizardSinglePage = ({view, name, config, onFieldChange, onSave,  ...props}: WizardPageProps<*>) => (
+    <BaseWizardPage onBack={props.onBack} name={name} onSave={onSave} config={config}
+                    header={constants.MaterialNameCapitalLetter} askText={constants.EnterMaterialName}>
         {renderView(view, config, onFieldChange)}
     </BaseWizardPage>
 )
