@@ -15,7 +15,7 @@ export const WordsWizardView = WizardSingleView(fields =>
     WordModel
 )
 
-export const ConfigurationWizardView = WizardView(fields => [
+export const ConfigurationWizardView = WizardView( fields => [
     WizardStep(constants.Material, SingleView(fields.materials)),
     WizardStep(constants.LearningMethod, SectionView([
         Section(constants.StepSettings, [fields.commandText, fields.picturesNumber, fields.showPicturesLabels, fields.isReadingCommands]),
@@ -34,4 +34,4 @@ export const ConfigurationWizardView = WizardView(fields => [
         // ])
     ])),
     WizardStep(constants.TestCapitalLetter, SingleView(fields.testConfig))
-], ConfigurationModel)
+], ConfigurationModel, "configuration")
