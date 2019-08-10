@@ -11,7 +11,7 @@ import {Modal, onConfirm} from "../components/modal/Modal"
 import {ModeTypes} from "../db/format"
 import {ListPage} from "../components/resources/ListPage"
 import {EmptyState} from "../libs/confy/components/ui/EmptyState"
-import {HeaderAction, HeaderButton} from "../libs/confy/components/ui/HeaderButton"
+import {HeaderButton} from "../libs/confy/components/ui/HeaderButton"
 import * as constants from "../../android/app/src/main/res/constantStrings";
 
 import {events, logCurrentScreen, logEvent} from "../events"
@@ -25,16 +25,19 @@ const ConfigurationsPage = ({history, configurations, allConfigs, activeMessage,
         logCurrentScreen("Tworzenie konfiguracji");
     }
 
-    return <ListPage onBack={() => history.goBack()} title={constants.Configurations} rightContent={<HeaderButton action={goToConfigCreator} text={constants.Create} />}>
+    return <ListPage onBack={() => history.goBack()} title={constants.Configurations}
+                     rightContent={<HeaderButton action={goToConfigCreator} text={constants.Create}/>}>
         {R.isEmpty(allConfigs)
-            ? <EmptyState icon="cogs" description={constants.ListOfConfigurationsIsEmpty} actionLabel={constants.CreateConfiguration}
+            ? <EmptyState icon="cogs" description={constants.ListOfConfigurationsIsEmpty}
+                          actionLabel={constants.CreateConfiguration}
                           action={goToConfigCreator}/>
             : <ConfigList onSearchChange={onSearchChange} searchQuery={searchQuery}>
-                {configurations.map(config => (
-                    <ConfigElem key={config.id}
-                                item={config}
-                                active={activeMessage(config)}
-                                onOpen={() => history.push(`/creator/${config.id}`)}>
+                {configurations.map(config => {
+                    return <ConfigElem key={config.id}
+                                       item={config}
+                                       active={activeMessage(config)}
+                                       onOpen={() => history.push(`/creator/${config.id}`)}
+                                       onCheckboxPress={() => actions.changeActiveConfig(config.id)}>
                         <ActionsMenu>
                             <ActionItem onSelect={() => actions.duplicate(allConfigs, config)}>
                                 <Icon name="copy"/>
@@ -45,15 +48,12 @@ const ConfigurationsPage = ({history, configurations, allConfigs, activeMessage,
                             }}>
                                 <Icon name="create"/>
                             </ActionItem>
-                            <ActionItem onSelect={() => actions.changeActiveConfig(config.id)}>
-                                <Icon name="arrow-up"/>
-                            </ActionItem>
                             <ActionItem isEnabled={isDeleteEnabled} onSelect={() => actions.delete(config)}>
                                 <Icon name="trash"/>
                             </ActionItem>
                         </ActionsMenu>
                     </ConfigElem>
-                ))}
+                })}
             </ConfigList>
         }
     </ListPage>
@@ -88,7 +88,7 @@ const dispatchToProps = (dispatch, ownProps) => ({
                 config.config
             ]
         ),
-        delete: (config) => Modal.ask(constants.AreYouSureYouWantToDelete + constants.DeleteConfiguration + config.name + "?" , false)
+        delete: (config) => Modal.ask(constants.AreYouSureYouWantToDelete + constants.DeleteConfiguration + config.name + "?", false)
             .then(onConfirm(() => dispatch(deleteConfig.start(config))))
     }
 })

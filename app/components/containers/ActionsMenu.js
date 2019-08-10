@@ -1,6 +1,6 @@
 import React from "react"
 import * as R from "ramda"
-import {Button, Icon, View} from "native-base"
+import {Button, View} from "native-base"
 
 const colorLens = R.lensPath(['style','color'])
 const disabledColor = "#aaaaaa"
