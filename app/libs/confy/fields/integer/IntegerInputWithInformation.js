@@ -1,13 +1,10 @@
 import React from "react"
-import styles from "./styles"
-import {Button, Form, Icon, Input, Item, Text} from "native-base"
-import {TouchableOpacity, View, Slider, Alert, Switch} from "react-native"
+import {Button, Icon, Text} from "native-base"
+import {Slider, View} from "react-native"
 import FieldLabel from "../../components/ui/FieldLabel"
-import R from "ramda"
 import {withLink} from "../../libs/withState"
 import {Containers} from "../../styles/containers"
-import {Modal, onConfirm} from "../../../../components/modal/Modal";
-import * as constants from "../../../../../android/app/src/main/res/constantStrings";
+import {Modal} from "../../../../components/modal/Modal";
 
 const IntegerSlider = ({verbose, value, onChange, min, max, units, info, isFocused, isFocusedChange}) => {
 
@@ -20,7 +17,7 @@ const IntegerSlider = ({verbose, value, onChange, min, max, units, info, isFocus
             <FieldLabel text={verbose}/>
             <Button transparent
                     onPress={showInfo}>
-                <Icon name="information-circle" style={{color: "#3F51B5"}}/>
+                <Icon name="information-circle" style={{ fontSize: 40}}/>
             </Button>
         </View>
         <Text>{value}{units ? ` ${units}` : ""}</Text>

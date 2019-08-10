@@ -22,7 +22,7 @@ export const MultiChooser = ({value, onChange, options, verbose, info}: MultiCho
             <Text style={{marginBottom: 10}}>{verbose}</Text>
             <Button transparent
                     onPress={showInfo}>
-                <Icon name="information-circle" style={{color: "#3F51B5"}}/>
+                <Icon name="information-circle" style={{ fontSize: 40}}/>
             </Button>
         </View>
         <MultiOptions style={styles.container} value={value} onChange={onChange}>
