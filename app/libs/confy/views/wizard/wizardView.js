@@ -15,12 +15,13 @@ type WizardStepViewProps = {
 type WizardStepViewType<M> = WizardViewType<M, WizardStepViewProps>
 type ViewDefiner<F> = (fields: F) => Array<Step>
 
-export const WizardView = <T: {}, M: ModelType<T>>(defineView: ViewDefiner<$PropertyType<M, 'fields'>>, model: M): WizardStepViewType<M> => ({
+export const WizardView = < T: {}, M: ModelType<T>>(defineView: ViewDefiner<$PropertyType<M, 'fields'>>, model: M , ty:string): WizardStepViewType<M> => ({
     model,
     component: WizardPage,
     props: {
         steps: defineView(model.fields)
-    }
+    },
+    type : ty
 })
 type WizardStepFactory = (string, StepView) => Step
 export const WizardStep: WizardStepFactory = (name, view) => ({name, view})

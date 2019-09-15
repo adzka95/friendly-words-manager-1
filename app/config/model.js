@@ -62,11 +62,15 @@ export const ConfigurationModel = MainModel({
     numberOfRepetitions: IntegerFieldWithInformation(constants.NumberOfRepetitions, {min: 1, max: 20, def: 3, info: constants.NumberOfRepetitionInformation}),
     textRewards: MultiChooserField(constants.ChooseVerbalPraise, {
         options: [
+            constants.Fantastic,
             constants.Cool,
+            constants.Extra,
+            constants.Revelation,
             constants.Great,
             constants.Good
         ],
         def: [
+            constants.Cool,
             constants.Great,
             constants.Good
         ],
