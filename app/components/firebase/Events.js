@@ -9,7 +9,7 @@ export const events = {
     change_tab_strengthen:  "zmiana_zakladki_wzmocnienia",
     change_tab_test:        "zmiana_zakladki_test",
     change_tab_step_option: "zmiana_zakladki_ustawienia_kroku",
-    change_tab_try_option:  "zmiana_zakladki_ustawienia_proby",
-    change_tab_tip_option:  "zmiana_zakladki_ustawienia_podpowiedzi"
+    change_tab_try_option:  "zmiana_zakladki_liczba_powtorzen",
+    change_tab_tip_option:  "zmiana_zakladki_czas_do_odpowiedzi"
 }
 
